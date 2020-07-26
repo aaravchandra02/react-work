@@ -1,3 +1,6 @@
+/* Here react only regenerates in its DOM node the <pre> tag as it has inmemory comparision 
+and only re-renders the necessary elements unlike normal DOM. This is possible because of React's virtual DOM.*/
+
 document.getElementById('mountNode').innerHTML = `
 	<div>
     Hello HTML
