@@ -3,6 +3,7 @@
 //what component ot create?
 // card
 // list of cards
+// for styling either use global styling using CSS or use JS styling as shown below.
 
 class Card extends React.Component {
     render() {

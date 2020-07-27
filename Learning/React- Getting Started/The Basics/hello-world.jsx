@@ -234,3 +234,18 @@ ReactDOM.render(
     <App />,
     document.getElementById('mountNode'),
 );
+
+class ConditionalStyle extends React.Component {
+    render() {
+        return (
+            <div style={{ color: Math.random() < 0.5 ? 'green' : 'red' }}>
+                How do you like this?
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <ConditionalStyle />,
+    mountNode,
+);
