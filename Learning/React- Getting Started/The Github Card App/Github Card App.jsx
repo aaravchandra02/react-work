@@ -52,8 +52,9 @@ const CardList = (props) => {
             [<Card />,<Card />,<Card />]
             which is ultimately:
             [React.createElement(),React.createElement(),React.createElement()]
+            key = added as reordering in future may cause issues.
             */}
-            {props.profiles.map(profile => <Card {...profile} />)}
+            {props.profiles.map(profile => <Card key={profile.id} {...profile} />)}
         </div>
     );
 
@@ -104,11 +105,17 @@ class Form extends React.Component {
 
     // Ideally use it to provide user with UI feedback like password etc. Through React rather than reading DOM element.
     state = { username: '' }; // created state object and an element to handle input value.
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault(); // done to prevent submit behaviour as we are using submit event as the trigger.
+        const response = await axios.get(`https://www.api.github.com/users/${this.state.userName}`); // used to make API call instead of fetch().
         console.log(
             this.state.userName
-        )
+        );
+        console.log(response);
+        console.log(response.data);
+        // as new fn is available (onSubmit), therefore:
+        this.props.onSubmit(response.data);
+        this.setState({ username: '' })// reset the input field.
     };
     render() {
         return (
@@ -125,6 +132,8 @@ class Form extends React.Component {
         )
     }
 }
+// child component cannot change state of parent but parent can pass properties(fn component) which can be changed by the child.
+
 
 class App extends React.Component {
     // constructor is used for tapping into states
@@ -137,14 +146,26 @@ class App extends React.Component {
 
     // shorter syntax for the above constructor thing using babel
     state = {
-        profiles: testData,
-    }
+        profiles: [],
+    };
+
+    addNewProfile = (profileData) => {
+        console.log('App', profileData)
+        /*
+        Append the newly returned data to the list. setState changes the React state and it takes a arg or fn.
+        Then
+        */
+        this.setState(prevState => ({
+            profiles: [...prevState.profiles, profileData], // equivalent to cancatenation
+        }));
+    };
     // its required in a class component, it return the virtual DOM decription of our component
     render() {
         return (
             <div>
                 <div className="header">{this.props.title}</div>
-                <Form />
+                {/* Invoked when form is submitted */}
+                <Form onSubmit={this.addNewProfile} />
                 {/* <CardList profiles={testData} /> */}
                 <CardList profiles={this.state.profiles} />
             </div>
