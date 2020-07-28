@@ -75,7 +75,17 @@ class Card extends React.Component {
     }
 }
 
-// Form Component for taking inputs from the 
+// Form Component for taking inputs from the user.
+class Form extends React.Component {
+    render() {
+        return (
+            <form className='input-form' action={}>
+                <input type="text" placeholder="Github Username" />
+                <button>Add this Card</button>
+            </form>
+        )
+    }
+}
 
 class App extends React.Component {
     // constructor
@@ -98,5 +108,6 @@ class App extends React.Component {
 
 ReactDOM.render(
     <App title="The GitHub Cards App" />,
+    <Form />,
     mountNode,
 );
