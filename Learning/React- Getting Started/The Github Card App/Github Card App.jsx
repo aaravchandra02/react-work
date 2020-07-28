@@ -89,20 +89,25 @@ class Form extends React.Component {
 
 class App extends React.Component {
     // constructor is used for tapping into states
-    constructor(props) {
-        super(props) // Its a JS thing which is needed to honor the link b/w App class and the class that App class extends from.
-        this.state = {
-            profiles: testData,// should be '[]' but as we are testing hence its initialised.
-        }; // it has to be an object use useState in fn.
-    }
+    // constructor(props) {
+    //     super(props) // Its a JS thing which is needed to honor the link b/w App class and the class that App class extends from.
+    //     this.state = {
+    //         profiles: testData,// should be '[]' but as we are testing hence its initialised.
+    //     }; // it has to be an object use useState in fn.
+    // }
 
+    // shorter syntax for the above constructor thing using babel
+    state = {
+        profiles: testData,
+    }
     // its required in a class component, it return the virtual DOM decription of our component
     render() {
         return (
             <div>
                 <div className="header">{this.props.title}</div>
                 <Form />
-                <CardList profiles={testData} />
+                {/* <CardList profiles={testData} /> */}
+                <CardList profiles={this.state.profiles} />
             </div>
         );
     }
