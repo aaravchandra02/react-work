@@ -77,11 +77,25 @@ class Card extends React.Component {
 
 // Form Component for taking inputs from the user.
 class Form extends React.Component {
+    // Inorder to use 'ref' of React. ref is React's fancy ID.
+    userNameinput = React.createRef();
+
+    handleSubmit = (e) => {
+        e.preventDefault(); // done to prevent submit behaviour as we are using submit event as the trigger.
+        console.log(
+            this.userNameinput.current.value // ref object.currentvalue(its the html inout element itself).value
+        )
+    };
     render() {
         return (
-            <form className='input-form' action={}>
-                <input type="text" placeholder="Github Username" />
-                <button>Add this Card</button>
+            <form onSubmit={this.handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Github Username"
+                    ref={this.userNameinput}
+                    required
+                />
+                <button >Add this Card</button>
             </form>
         )
     }
