@@ -67,13 +67,15 @@ class Card extends React.Component {
             <div className="github-profile">
                 <img src={profile.avatar_url} />
                 <div className="info">
-                    <div className="name">Name here...</div>
-                    <div className="company">Company here...</div>
+                    <div className="name">{profile.name}</div>
+                    <div className="location">{profile.location}</div>
                 </div>
             </div>
         );
     }
 }
+
+// Form Component for taking inputs from the 
 
 class App extends React.Component {
     // constructor
