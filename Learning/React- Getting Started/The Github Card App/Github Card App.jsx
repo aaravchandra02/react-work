@@ -53,7 +53,7 @@ const CardList = (props) => {
             which is ultimately:
             [React.createElement(),React.createElement(),React.createElement()]
             */}
-            {testData.map(profile => <Card {...profile} />)}
+            {props.profiles.map(profile => <Card {...profile} />)}
         </div>
     );
 
@@ -95,7 +95,7 @@ class App extends React.Component {
         return (
             <div>
                 <div className="header">{this.props.title}</div>
-                <CardList />
+                <CardList profiles={testData} />
             </div>
         );
     }
