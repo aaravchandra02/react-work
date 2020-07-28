@@ -77,13 +77,37 @@ class Card extends React.Component {
 
 // Form Component for taking inputs from the user.
 class Form extends React.Component {
-    // Inorder to use 'ref' of React. ref is React's fancy ID.
-    userNameinput = React.createRef();
+    //  WHen using simple 'ref' 
+    //     // Inorder to use 'ref' of React. ref is React's fancy ID.
+    //     userNameinput = React.createRef();
 
+    //     handleSubmit = (e) => {
+    //         e.preventDefault(); // done to prevent submit behaviour as we are using submit event as the trigger.
+    //         console.log(
+    //             this.userNameinput.current.value // ref object.currentvalue(its the html inout element itself).value
+    //         )
+    //     };
+    //     render() {
+    //         return (
+    //             <form onSubmit={this.handleSubmit}>
+    //                 <input
+    //                     type="text"
+    //                     placeholder="Github Username"
+    //                     ref={this.userNameinput}
+    //                     required
+    //                 />
+    //                 <button >Add this Card</button>
+    //             </form>
+    //         )
+    //     }
+    // }
+
+    // Ideally use it to provide user with UI feedback like password etc. Through React rather than reading DOM element.
+    state = { username: '' }; // created state object and an element to handle input value.
     handleSubmit = (e) => {
         e.preventDefault(); // done to prevent submit behaviour as we are using submit event as the trigger.
         console.log(
-            this.userNameinput.current.value // ref object.currentvalue(its the html inout element itself).value
+            this.state.userName
         )
     };
     render() {
@@ -91,8 +115,9 @@ class Form extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <input
                     type="text"
+                    value={this.state.username} // creates a controlled element and cant type in the field.
+                    onChange={e => this.setState({ username: e.target.value })}//it enables DOM to tell react that something is shcnaged and thus it should reflect changes.
                     placeholder="Github Username"
-                    ref={this.userNameinput}
                     required
                 />
                 <button >Add this Card</button>
