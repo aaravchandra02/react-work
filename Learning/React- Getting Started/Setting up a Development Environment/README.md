@@ -13,6 +13,6 @@ To set up follow these steps:
 
 4) Better way as no local copoy of create-app-react package. Accesses the latest released app using web. x stands for 'execute'.
 
-   **npx create-app-react 'app-name'**
+   **npx create-react-app 'app-name'**
 
-   ```npx create-app-react CRA-test```
+   ```npx create-react-app CRA-test```
