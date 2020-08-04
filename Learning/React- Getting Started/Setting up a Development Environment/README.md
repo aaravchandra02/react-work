@@ -11,20 +11,23 @@ To set up follow these steps:
    - ```npm -v```
    - ```npx -v```
    - ```node -v```
+---
 
-3) First method: *** create-React-App***
+#### 'create-react-app' Method
+
+1) First method: 
    
    **npm i``stall '-g flag' 'create-react-app package' && 'create-react-app command' 'app-name'**
 
    ```npm i -g create-react-app && create-app-react my-app```
 
-4) Better way as no local copoy of create-react-app package. Accesses the latest released app using web. x stands for 'execute'.
+2) Better way as no local copoy of create-react-app package. Accesses the latest released app using web. x stands for 'execute'.
 
    **npx create-react-app 'app-name'**
 
    ```npx create-react-app my-app```
 
-5) Once done, use the followiing commands for each process:
+3) Once done, use the followiing commands for each process:
    - ``` npm start```
    > Starts the development server.
 
@@ -34,10 +37,14 @@ To set up follow these steps:
    - ``` npm run eject```
    > Removes this tool and copies build dependencies, configuration files and scripts into app directory. If you do this, you can't go back!
 
-6) I suggest you begin by typing:
+4) I suggest you begin by typing:
 
    - ``` cd 'app-name'```
    - ``` npm start ```
+---
 
+#### Manual Method
 
+   - Follow steps given on the link below:
+   <https://www.jscomplete.com/reactful>
 
