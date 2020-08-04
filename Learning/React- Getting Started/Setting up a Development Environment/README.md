@@ -7,9 +7,10 @@ To set up follow these steps:
 1) Install node.js
 
 2) Check **npm,npx,node** installation using:
-- ```npm -v``
-- ```npx -v``
-- ```node -v``
+
+   - ```npm -v``
+   - ```npx -v``
+   - ```node -v``
 
 3) First method: **npm i``stall '-g flag' 'create-app-react package' && 'create-react-app command' 'app-name'**
 
