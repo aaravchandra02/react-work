@@ -12,13 +12,13 @@ To set up follow these steps:
    - ```npx -v```
    - ```node -v```
 
-3) First method: 
+3) First method: *** create-React-App***
    
-   **npm i``stall '-g flag' 'create-app-react package' && 'create-react-app command' 'app-name'**
+   **npm i``stall '-g flag' 'create-react-app package' && 'create-react-app command' 'app-name'**
 
-   ```npm i -g create-app-react && create-app-react my-app```
+   ```npm i -g create-react-app && create-app-react my-app```
 
-4) Better way as no local copoy of create-app-react package. Accesses the latest released app using web. x stands for 'execute'.
+4) Better way as no local copoy of create-react-app package. Accesses the latest released app using web. x stands for 'execute'.
 
    **npx create-react-app 'app-name'**
 
