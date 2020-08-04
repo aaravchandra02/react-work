@@ -12,7 +12,9 @@ To set up follow these steps:
    - ```npx -v```
    - ```node -v```
 
-3) First method: **npm i``stall '-g flag' 'create-app-react package' && 'create-react-app command' 'app-name'**
+3) First method: 
+   
+   **npm i``stall '-g flag' 'create-app-react package' && 'create-react-app command' 'app-name'**
 
    ```npm i -g create-app-react && create-app-react 'my-app'```
 
