@@ -45,6 +45,10 @@ To set up follow these steps:
 
 #### Manual Method
 
+   Use the guide below:
+
+   **The Always-recent Guide to Creating Your Own Development Environment for Node and React**
+
    - Follow steps given on the link below:
    <https://jscomplete.com/learn/1rd-reactful>
 
