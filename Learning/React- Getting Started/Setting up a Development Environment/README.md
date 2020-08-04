@@ -46,5 +46,5 @@ To set up follow these steps:
 #### Manual Method
 
    - Follow steps given on the link below:
-   <https://www.jscomplete.com/reactful>
+   <https://jscomplete.com/learn/1rd-reactful>
 
