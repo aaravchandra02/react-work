@@ -1,6 +1,8 @@
-//class component
+import React from 'react';
 
-//what component ot create?
+// 'class' component
+
+// What component to create ?
 // card
 // list of cards
 // for styling either use global styling using CSS or use JS styling as shown below.
